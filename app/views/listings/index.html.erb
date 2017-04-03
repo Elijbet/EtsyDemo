@@ -6,7 +6,7 @@
             <%= image_tag listing.image.url(:medium), class:"card-img-top" %>
               <div class="card-block">
                 <h4 class="card-title"><%= listing.name %></h4>
-                <p><%= "sold by #{listing.user.name}" %></p>
+                <p><%#= "sold by #{listing.user.name}" %></p>
                   <p class="card-text"><%= listing.description %></p>
               </div>
               <ul class="list-group list-group-flush">
