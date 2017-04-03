@@ -1,29 +1,38 @@
-<div class="center">
-  <div class="row">
-    <% @listings.each do |listing| %>
-      <div class="col-sm-3">
-          <div class="card" >
-            <%= link_to image_tag(listing.image.url(:medium), class:"card-img-top"), listing %>
-              <div class="card-block">
-                <h4 class="card-title"><%= listing.name %></h4>
-                <p><%= "sold by #{listing.user.name}" %></p>
-                  <p class="card-text"><%= listing.description %></p>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item"><%= number_to_currency(listing.price) %></li>
-              </ul>
-            <div class="card-block">
-              <% if (user_signed_in?) && (current_user == listing.user) %>
-                <%= link_to 'Edit', edit_listing_path(listing), class:"card-link" %>
-                <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class:"card-link" %>
-              <% end %>
-            </div>
+<table class="table table-striped table-bordered">
+  <tr>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Action</th>
+  </tr>
+
+  <% @listings.each do |listing| %>
+    <tr>
+      <td><%= image_tag listing.image.url(:thumb) %></td>
+      <td><%= listing.name %></td>
+      <td><%= listing.description %></td>
+      <td><%= number_to_currency(listing.price) %></td>
+      <td>
+
+        <div class="dropdown show">
+          <a class="btn btn-info dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Edit Menu
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="#"><%= link_to "View", listing, class: "btn btn-link" %></a>
+            <a class="dropdown-item" href="#"><%= link_to "Edit", edit_listing_path(listing), class: "btn btn-link" %></a>
+            <a class="dropdown-item" href="#"><%= link_to "Destroy", listing, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-link" %></a>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-</div>
-  <% if user_signed_in? %>
-    <%= link_to 'New Listing', new_listing_path, class:"btn btn-link" %>
+      </td>
+    </tr>
   <% end %>
+</table>
+
+<br>
+
+<% if user_signed_in? %>
+  <%= link_to "New Listing", new_listing_path, class: "btn btn-link" %>
+<% end %>
 
