@@ -4,16 +4,20 @@
       <div class="col-sm-3">
           <div class="card" >
             <%= link_to image_tag(listing.image.url(:medium), class:"card-img-top"), listing %>
-                <div class="card-block">
-                  <h4 class="card-title"><%= listing.name %></h4>
-                  <p><%= "sold by #{listing.user.name}" %></p>
-                    <p class="card-text"><%= listing.description %></p>
-                </div>
+              <div class="card-block">
+                <h4 class="card-title"><%= listing.name %></h4>
+                <p><%= "sold by #{listing.user.name}" %></p>
+                  <p class="card-text"><%= listing.description %></p>
+              </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item"><%= number_to_currency(listing.price) %></li>
               </ul>
             <div class="card-block">
-          </div>
+              <% if (user_signed_in?) && (current_user == listing.user) %>
+                <%= link_to 'Edit', edit_listing_path(listing), class:"card-link" %>
+                <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class:"card-link" %>
+              <% end %>
+            </div>
         </div>
       </div>
     <% end %>
