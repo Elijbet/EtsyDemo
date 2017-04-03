@@ -3,7 +3,7 @@
     <% @listings.each do |listing| %>
       <div class="col-sm-3">
           <div class="card" >
-            <%= image_tag listing.image.url(:medium), class:"card-img-top" %>
+            <%= link_to image_tag(listing.image.url(:medium), class:"card-img-top"), listing %>
               <div class="card-block">
                 <h4 class="card-title"><%= listing.name %></h4>
                 <p><%= "sold by #{listing.user.name}" %></p>
@@ -13,15 +13,17 @@
                 <li class="list-group-item"><%= number_to_currency(listing.price) %></li>
               </ul>
             <div class="card-block">
-              <%= link_to 'Show', listing, class:"card-link" %>
-              <%= link_to 'Edit', edit_listing_path(listing), class:"card-link" %>
-              <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class:"card-link" %>
+              <% if (user_signed_in?) && (current_user == listing.user) %>
+                <%= link_to 'Edit', edit_listing_path(listing), class:"card-link" %>
+                <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class:"card-link" %>
+              <% end %>
             </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-  <%= link_to 'New Listing', new_listing_path, class:"btn btn-link" %>
-
+  <% if user_signed_in? %>
+    <%= link_to 'New Listing', new_listing_path, class:"btn btn-link" %>
+  <% end %>
 

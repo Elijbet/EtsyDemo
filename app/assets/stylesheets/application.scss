@@ -13,6 +13,11 @@
  */
 @import "bootstrap";
 
+body {
+	background-color: #F5F5E9 !important;
+	color: #7E5E69 !important;
+	font-family: Arial, Helvetica, sans-serif;
+}
 
 .card-img-top {
     height: 100%;
@@ -23,34 +28,29 @@
 .left{
     flex: 0 0 25%;
     max-width: 25%;
-    border: 1.5px solid #7E5E69;
+    border: 1.5px solid #E6E9EC;
     border-radius: calc(.25rem - 1px);
     background-color: white;
-    padding: 10px;
 }
 
 .bg-faded {
     background-color: #FAEDCD !important;
 }
 
-.navbar-brand{
+.navbar-brand > a{
 	font-family: guardian-egyptt, georgia, serif;
 	font-weight: 400;
 	font-size: 2rem !important;
-	color: #F56400 !important;
+	color: #CF4C40 !important;
 }
-.navbar-collapse .navbar-nav > li > a {
+
+.navbar-collapse .navbar-nav > li {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	font-weight: bold;
 	color: #0192B5;
 }
 
-body {
-	background-color: #F5F5E9 !important;
-	color: #7E5E69 !important;
-	font-family: Arial, Helvetica, sans-serif;
-}
 .center{
 	text-align: center;
 }
@@ -63,4 +63,12 @@ body {
 	h3 {font-size: 45px;}
 	h5 {font-size: 25px;}
 	p {font-size: 18px;}
+}
+
+div .col-md-6 {
+	padding: 0 !important;
+}
+.col-md-6 img {
+	height: 100%;
+	width: 100%;
 }
