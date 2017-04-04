@@ -14,11 +14,27 @@
     </ul>
 
     <ul class="nav navbar-nav ml-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item nav-link"><%= link_to 'Manage Listings', seller_path %></li>
 
-        <li class="nav-item nav-link"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <li class="nav-item nav-link"><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+      <% if user_signed_in? %>
+
+
+        <ul class="nav nav-pills">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seller Account</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#"><%= link_to 'Manage Listings', seller_path %></a>
+              <a class="dropdown-item" href="#"><%= link_to "Sales History", sales_path %></a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %></a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#"><%= link_to "Purchase History", purchases_path %></a>
+              <a class="dropdown-item" href="#"><%= link_to 'Edit Profile', edit_user_registration_path %></a>
+              <a class="dropdown-item" href="#"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></a>
+            </div>
+          </li>
+        </ul>
       <% else %>
         <li class="nav-item nav-link"><%= link_to 'Sign Up', new_user_registration_path %></li>
         <li class="nav-item nav-link"><%= link_to 'Sign In', new_user_session_path %></li>
