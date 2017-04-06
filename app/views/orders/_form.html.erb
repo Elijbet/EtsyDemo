@@ -38,10 +38,6 @@
       </div>
 
       <div class="form-group">
-        <%= f.submit "Complete Order", class: "btn btn-success" %>
-      </div>
-
-      <div class="form-group">
         <div class="row">
           <div class="col-md-8">
             <%= label_tag :card_number, "Credit Card Number" %>
@@ -62,6 +58,11 @@
         <div class="col-md-3">
           <%= select_year nil, { start_year: Date.today.year, end_year: Date.today.year + 10}, { :name => nil, :'data-stripe' => "exp-year", class: "form-control"} %>
         </div>
+
+        <div class="form-group">
+          <%= f.submit "Complete Order", class: "btn btn-success" %>
+        </div>
+
       </div>
     </div>
 
