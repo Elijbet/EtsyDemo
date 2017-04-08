@@ -10,12 +10,12 @@
           <div class="card" >
             <%= link_to image_tag(listing.image.url(:big), class:"card-img-top"), listing %>
                 <div class="card-block">
-                  <h4 class="card-title"><%= listing.name %></h4>
-                  <p><%= "sold by #{listing.user.name}" %></p>
-                    <p class="card-text"><%= listing.description %></p>
+                  <%= content_tag :h4, listing.name, class: "card-title" %>
+                  <%= content_tag :p, "sold by #{listing.user.name}" %>
+                  <%= content_tag :p, listing.description, class: "card-text" %>
                 </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item"><%= number_to_currency(listing.price) %></li>
+                <%= content_tag :li, number_to_currency(listing.price), class: "list-group-item" %>
               </ul>
             <div class="card-block">
           </div>
