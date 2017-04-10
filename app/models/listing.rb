@@ -1,14 +1,14 @@
 class Listing < ApplicationRecord
-	if Rails.env.development?
-		has_attached_file :image, styles: { big: "1000x", medium: "50x", thumb: "100x100>" }, default_url: "default.jpg"
-  	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-  else
-    has_attached_file :image, styles: { big: "1000x", medium: "200x", thumb: "100x100>" }, default_url: "default.jpg",
-    									:storage => :dropbox,
-    									:dropbox_credentials => Rails.root.join("config/dropbox.yml"),
-    									:path => ":style/:id_:filename"
-    validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-	end
+  # This method associates the attribute ":avatar" with a file attachment
+  has_attached_file :image, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '300x300>'
+  }
+
+  # Validate the attached image is image/jpg, image/png, etc
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+end
 
   validates :name, :description, :price, presence: true
   validates :price, numericality: { greater_than: 0 }
