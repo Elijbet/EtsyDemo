@@ -34,8 +34,7 @@ gem 'jbuilder', '~> 2.6', '>= 2.6.3'
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'paperclip', '~> 4.3.7'
-gem 'paperclip-dropbox', '~> 1.3', '>= 1.3.2'
-gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'aws-sdk', '~> 2.3'
 gem 'devise', '~> 4.2', '>= 4.2.1'
   
 source 'https://rails-assets.org' do
