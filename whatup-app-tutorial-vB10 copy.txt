@@ -77,8 +77,6 @@ exit
 			pg gem and bundle install
 
 			changed database.yml
-
-			adapter:postgresqul, database: etsydemo_development, username: esteemed
 			
 			rake db:migrate
 
@@ -86,11 +84,14 @@ exit
 			rails db
 			select * from listings;
 
-			nothing
+			push to heroku
+
+			heroku run rake db:migrate
+
 
 
 rake db:create:all (rake db:create:all creates all the databases for the application (which are defined in database.yml))
-taps to export from one database to another
+if you want taps to export from one database to another
 gem install taps
 taps server
 			—————————
