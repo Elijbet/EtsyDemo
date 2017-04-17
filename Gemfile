@@ -33,13 +33,8 @@ gem 'jbuilder', '~> 2.6', '>= 2.6.3'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
-<<<<<<< HEAD
 #gem 'paperclip', '~> 4.3.7'
 gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
-=======
-gem 'paperclip', '~> 4.3.7'
-gem 'aws-sdk', '~> 2.3'
->>>>>>> 98d49f99c7a957994d964bd11dda6bf637b8ce79
 gem 'devise', '~> 4.2', '>= 4.2.1'
 gem 'aws-sdk', '~> 2.9', '>= 2.9.6'
   
