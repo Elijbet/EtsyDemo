@@ -36,7 +36,6 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 #gem 'paperclip', '~> 4.3.7'
 gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
 gem 'devise', '~> 4.2', '>= 4.2.1'
-gem 'paperclip'
 gem 'aws-sdk', '~> 2.9', '>= 2.9.6'
   
 source 'https://rails-assets.org' do
@@ -47,7 +46,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  # gem 'sqlite3'
+  gem 'pg', '~> 0.20.0'
 
 end
 
