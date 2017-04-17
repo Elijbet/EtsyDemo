@@ -89,7 +89,7 @@ exit
 			nothing
 
 
-rake db:create:all
+rake db:create:all (rake db:create:all creates all the databases for the application (which are defined in database.yml))
 taps to export from one database to another
 gem install taps
 taps server
