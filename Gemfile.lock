@@ -119,6 +119,15 @@ GEM
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
+<<<<<<< HEAD
+=======
+    paperclip (4.3.7)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (= 0.3.0)
+>>>>>>> 98d49f99c7a957994d964bd11dda6bf637b8ce79
     pg (0.20.0)
     puma (3.8.2)
     rack (2.0.1)
@@ -202,7 +211,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+<<<<<<< HEAD
   aws-sdk (~> 2.9, >= 2.9.6)
+=======
+  aws-sdk (~> 2.3)
+>>>>>>> 98d49f99c7a957994d964bd11dda6bf637b8ce79
   bootstrap (~> 4.0.0.alpha6)
   byebug
   coffee-script (~> 2.4, >= 2.4.1)
@@ -210,7 +223,11 @@ DEPENDENCIES
   jbuilder (~> 2.6, >= 2.6.3)
   jquery-rails (~> 4.3, >= 4.3.1)
   listen (~> 3.0.5)
+<<<<<<< HEAD
   paperclip!
+=======
+  paperclip (~> 4.3.7)
+>>>>>>> 98d49f99c7a957994d964bd11dda6bf637b8ce79
   pg (~> 0.20.0)
   puma (~> 3.0)
   rails (~> 5.0.2)

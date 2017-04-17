@@ -86,6 +86,7 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'etsydemo-elizak.herokuapp.com', port: 3000 }
 
+<<<<<<< HEAD
   config.paperclip_defaults = {
     storage: :s3,
     s3_host_name: 's3-us-west-1.amazonaws.com',
@@ -96,4 +97,16 @@ Rails.application.configure do
       s3_region: ENV['AWS_REGION'],
     }
   }
+=======
+# config/environments/production.rb
+config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV.fetch('S3_BUCKET_NAME'),
+    access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+    secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+    s3_region: ENV.fetch('AWS_REGION'),
+  }
+}
+>>>>>>> 98d49f99c7a957994d964bd11dda6bf637b8ce79
 end
