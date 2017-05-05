@@ -23,10 +23,7 @@
 # Ignore application configuration
 /config/application.yml
 /config/secrets.yml
-<<<<<<< HEAD
-     
-=======
->>>>>>> 98d49f99c7a957994d964bd11dda6bf637b8ce79
+
 
 # Ignore files uploaded on localhost
 /public/system

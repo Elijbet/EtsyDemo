@@ -88,7 +88,7 @@ exit
 
 			heroku run rake db:migrate
 
-
+			heroku pg:psql
 
 rake db:create:all (rake db:create:all creates all the databases for the application (which are defined in database.yml))
 if you want taps to export from one database to another

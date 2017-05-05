@@ -21,6 +21,4 @@ test:
   <<: *default
   database: etsydemo_test
 
-production:
-  <<: *default
-  database: etsydemo_production
+
