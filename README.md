@@ -1,5 +1,7 @@
-Etsy Demo with BaseRails
-
+## Etsy Demo with BaseRails
+--------------------------
+Currently broken. 
+__________________________
 
 Tutorial Features:
 
